@@ -1,7 +1,8 @@
-// Bring in express, body-parser, and mongoose
+// Bring in express, body-parser, passport, and mongoose
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const passport = require("passport");
 
 // Bring in routes
 const users = require("./routes/api/users");
@@ -24,8 +25,14 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
+// Passport middleware
+app.use(passport.initialize());
+
+// Passport Config
+require("./config/passport")(passport);
+
 // Make sure the server is working
-app.get("/", (req, res) => res.send("Hello World"));
+// app.get("/", (req, res) => res.send("Hello World"));
 
 // Use Routes
 app.use("/api/users", users);
