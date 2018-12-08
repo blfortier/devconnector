@@ -12,19 +12,20 @@ class CreateProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      handle: ' ',
-      company: ' ',
-      website: ' ',
-      location: ' ',
-      status: ' ',
-      skills: ' ',
-      githubusername: ' ',
-      bio: ' ',
-      twitter: ' ',
-      facebook: ' ',
-      linkedin: ' ',
-      youtube: ' ',
-      instagram: ' ',
+      displaySocialInputs: '',
+      handle: '',
+      company: '',
+      website: '',
+      location: '',
+      status: '',
+      skills: '',
+      githubusername: '',
+      bio: '',
+      twitter: '',
+      facebook: '',
+      linkedin: '',
+      youtube: '',
+      instagram: '',
       errors: {}
     };
 
@@ -108,7 +109,6 @@ class CreateProfile extends Component {
             onChange={this.onChange}
             error={errors.youtube}
           />
-
 
           <InputGroup
             placeholder="Instagram Page URL"
