@@ -1,14 +1,51 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import isEmpty from '../../validation/isEmpty';
 
-class Profiles extends Component {
+class ProfileItem extends Component {
   render() {
-    return (
-      <div>
+    const { profile } = this.props;
 
+    return (
+      // this div represents what each profile
+      // item will look like
+      <div className="card card-body bg-light mb-3">
+        <div className="row">
+          <div className="col-2">
+            <img src={profile.user.avatar} alt="" className="rounded-circle" />
+            <div className="col-lg-6 col-md-4 col-8">
+              <h3>{profile.user.name}</h3>
+              <p>
+                {profile.status}{' '} {isEmpty(profile.company) ? null : (<span>at {profile.company}</span>)}
+              </p>
+              <p>
+                {isEmpty(profile.location) ? null : (<span>{profile.location}</span>)}
+              </p>
+              <Link to={`/profile/${profile.handle}`} className="btn btn-info">
+                View Profile
+              </Link>
+              <div className="col-md-4 d-none d-md-block">
+                <h4>SKill Set</h4>
+                <ul className="list-group">
+                  {profile.skills.slice(0, 4).map((skill, index) => (
+                    <li key={index} className="list-group-item">
+                      <i className="fa fa-check pr-1" />
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
 }
 
-export default connect(null)(Profiles);
+ProfileItem.propTypes = {
+  profile: PropTypes.object.isRequired
+}
+
+export default ProfileItem;
