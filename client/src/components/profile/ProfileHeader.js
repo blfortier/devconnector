@@ -21,16 +21,16 @@ class ProfileHeader extends Component {
               <p>
                 {isEmpty(profile.website) ? null :
                   (<a className="text-white p-2" href={profile.website} target="_blank">
-                    <i class="fas fa-globe fa-2x"></i>
+                    <i className="fas fa-globe fa-2x"></i>
                   </a>)}
 
                 {isEmpty(profile.social && profile.social.twitter) ? null :
-                  (<a className="text-white p-2" href={profile.social.twitter} target="_blank">
-                    <i class="fab fa-twitter fa-2x"></i>
+                  (<a classNameName="text-white p-2" href={profile.social.twitter} target="_blank">
+                    <i className="fab fa-twitter fa-2x"></i>
                   </a>)}
 
                 {isEmpty(profile.social && profile.social.facebook) ? null :
-                  (<a className="text-white p-2" href={profile.social.facebook} target="_blank">
+                  (<a classNameName="text-white p-2" href={profile.social.facebook} target="_blank">
                     <i class="fab fa-facebook fa-2x"></i>
                   </a>)}
 
