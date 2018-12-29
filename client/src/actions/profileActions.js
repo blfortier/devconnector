@@ -115,7 +115,6 @@ export const getProfiles = () => dispatch => {
     );
 };
 
-
 // Delete Education
 export const deleteEducation = (id) => dispatch => {
   axios
