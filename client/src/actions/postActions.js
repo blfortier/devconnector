@@ -153,12 +153,12 @@ export const deleteComment = (postId, commentId) => dispatch => {
 export const setPostLoading = () => {
   return {
     type: POST_LOADING
-  }
+  };
 };
 
 // Clear errors
 export const clearErrors = () => {
   return {
     type: CLEAR_ERRORS
-  }
+  };
 };
