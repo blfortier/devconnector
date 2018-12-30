@@ -21,6 +21,7 @@ class PostForm extends Component {
       this.setState({ errors: newProps.errors });
     }
   }
+
   onSubmit(e) {
     e.preventDefault();
 
@@ -40,6 +41,7 @@ class PostForm extends Component {
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
+
   render() {
     const { errors } = this.state;
 
@@ -65,7 +67,7 @@ class PostForm extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -73,7 +75,7 @@ PostForm.propTypes = {
   addPost: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
-}
+};
 
 const mapStateToProps = state => ({
   auth: state.auth,
