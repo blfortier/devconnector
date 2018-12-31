@@ -1,0 +1,4 @@
+db.users.createIndex(
+  {name: "text"},
+  {email: "text"}
+)

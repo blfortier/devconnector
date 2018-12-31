@@ -4,11 +4,10 @@ img {
 
 .landing {
   position: relative;
-  background: url('./img/showcase.jpg') no-repeat;
+  background: url('./img/landingPic.jpeg') no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
-  margin-top: -24px;
   margin-bottom: -50px;
 }
 
@@ -36,4 +35,8 @@ img {
 
 .form-control::placeholder {
   color: #bbb !important;
+}
+
+body {
+  background: #D4F7D4;
 }

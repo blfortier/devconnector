@@ -130,7 +130,7 @@ class AddEducation extends Component {
                   error={errors.description}
                   info="Tell us about the program that you were in"
                 />
-                <input type="submit" value="Submit" className="btn btn-info btn-block mt-4" />
+                <input type="submit" value="Submit" className="btn color color-white btn-block mt-4" />
               </form>
             </div>
           </div>
