@@ -12,6 +12,7 @@ class CreateProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: ' ',
       displaySocialInputs: '',
       handle: '',
       company: '',
@@ -43,6 +44,7 @@ class CreateProfile extends Component {
     e.preventDefault();
 
     const profileData = {
+      name: this.state.name,
       handle: this.state.handle,
       company: this.state.company,
       website: this.state.website,
@@ -144,6 +146,14 @@ class CreateProfile extends Component {
               <p className="lead text-center">Let's get some information to make your profile stand out</p>
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
+                <TextFieldGroup
+                  placeholder="* Name"
+                  name="name"
+                  value={this.state.name}
+                  onChange={this.onChange}
+                  error={errors.name}
+                  info="Enter your name"
+                />
                 <TextFieldGroup
                   placeholder="* Profile Handle"
                   name="handle"

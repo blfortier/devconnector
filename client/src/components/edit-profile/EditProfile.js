@@ -13,6 +13,7 @@ class CreateProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: ' ',
       handle: ' ',
       company: ' ',
       website: ' ',
@@ -90,6 +91,7 @@ class CreateProfile extends Component {
     e.preventDefault();
 
     const profileData = {
+      name: this.state.name,
       handle: this.state.handle,
       company: this.state.company,
       website: this.state.website,
