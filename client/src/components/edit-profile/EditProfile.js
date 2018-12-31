@@ -69,6 +69,7 @@ class CreateProfile extends Component {
 
       // Set component fields state
       this.setState({
+        name: profile.name,
         handle: profile.handle,
         company: profile.company,
         website: profile.website,
@@ -196,6 +197,14 @@ class CreateProfile extends Component {
               <h1 className="display-4 text-center">Edit Profile</h1>
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
+                <TextFieldGroup
+                  placeholder="* Name"
+                  name="name"
+                  value={this.state.name}
+                  onChange={this.onChange}
+                  error={errors.name}
+                  info="Enter your name"
+                />
                 <TextFieldGroup
                   placeholder="* Profile Handle"
                   name="handle"
