@@ -1,4 +1,5 @@
 db.users.createIndex(
-  {name: "text"},
-  {email: "text"}
+  {name: "text"}
 )
+
+db.users.find( {$name: {$search: "Betty"} } )

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import { clearCurrentProfile } from '../../actions/profileActions';
+import Search from '../../components/search/Search';
 
 class Navbar extends Component {
   onLogoutClick(e) {
@@ -56,7 +57,12 @@ class Navbar extends Component {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <form class="form-inline mr-auto">
                 <div class="md-form my-0">
-                  <input class="form-control" type="text" placeholder="Search" aria-label="Search" />
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Look up a dev!"
+                    aria-label="Search"
+                  />
                   <i class="fas fa-search text-wheat ml-3" aria-hidden="true"></i>
                 </div>
               </form>
