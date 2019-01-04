@@ -1,14 +1,29 @@
 import React, { Component } from 'react';
-
-//const { SECRET_OR_KEY } = this.process.env;
-//const { MONGO_URI } = process.env;
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 class Search extends Component {
-  state = {
-    query: '',
-    data: []
+  constructor(props) {
+    super(props);
+    this.state = {
+      query: '',
+      results: [],
+    }
   }
+
+  // _handleInputChange = () => {
+  //   this.setState({
+  //     query: this.search.value
+  //   }, () => {
+  //     if (this.state.query && this.state.query.length > 1) {
+  //       this.setState({ profile,: .user.name });
+  //     }
+  //   });
+  // };
+
+
   render() {
+    const { profile } = this.props;
     return (
       <div className="collapse navbar-collapse" id="navbarSupportedContent" >
         <form className="form-inline mr-auto">
@@ -30,4 +45,14 @@ class Search extends Component {
   }
 }
 
-export default Search; 
+Search.propTypes = {
+  profile: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  profile: state.profile,
+  auth: state.auth
+});
+
+
+export default connect(mapStateToProps)(Search); 
