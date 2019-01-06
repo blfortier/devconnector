@@ -19,19 +19,9 @@ class Navbar extends Component {
     const authLinks = (
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form class="form-inline mr-auto">
-              <div class="md-form my-0">
-                <input
-                  class="form-control"
-                  type="text"
-                  placeholder="Look up a dev!"
-                  aria-label="Search"
-                />
-                <i class="fas fa-search text-wheat ml-3" aria-hidden="true"></i>
-              </div>
-            </form>
-          </div>
+          <Link role="navigation" className="nav-link" to="/search">
+            Search
+        </Link>
           <Link role="navigation" className="nav-link" to="/feed">
             Post Feed
         </Link>

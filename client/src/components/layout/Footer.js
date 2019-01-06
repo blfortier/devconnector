@@ -2,7 +2,7 @@ import React from 'react'
 
 export default () => {
   return (
-    <footer className="font-2 color-wheat mt-5 p-4 text-center">
+    <footer className="font-2 color-wheat p-4 mt-15 text-center" style={{ position: "relative" }}>
       Copyright &copy; {new Date().getFullYear()} DevConnector
    </footer>
   )
